@@ -1,0 +1,63 @@
+{
+    "name": "Wren",
+    "scopeName": "source.wren",
+    "fileTypes": [ "wren" ],
+    "patterns": [
+        { "include": "#comment" },
+        { "include": "#blockComment" },
+        { "include": "#keyword" },
+        { "include": "#number" },
+        { "include": "#string" },
+        { "include": "#className" },
+        { "include": "#fieldName" }
+    ],
+    "repository": {
+        "comment": {
+            "name": "comment.line",
+            "match": "//.*"
+        },
+        "blockComment": {
+            "name": "comment.block",
+            "begin": "/\\*",
+            "end": "\\*/",
+            "patterns": [ { "include": "$self" } ]
+        },
+        "keyword": {
+            "name": "keyword",
+            "match": "\\b(?:break|class|construct|else|false|for|foreign|if|import|in|is|null|return|static|super|this|true|var|while)\\b"
+        },
+        "number": {
+            "name": "constant.numeric",
+            "match": "-?\\d+(?:.\\d+)?"
+        },
+        "className": {
+            "name": "entity.type",
+            "match": "\\b[A-Z][A-Za-z0-9_]+\\b"
+        },
+        "fieldName": {
+            "name": "variable.other",
+            "match": "\\b_[A-Za-z0-9_]+\\b"
+        },
+        "string": {
+            "name": "string.quoted.double",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                { "include": "#stringEscapes" }
+            ]
+        },
+        "stringEscapes": {
+            "patterns": [
+                {
+                    "name": "constant.character.escape",
+                    "match": "\\\\(?:[0\"\\abfnrtv]|x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4}|U[0-9A-Fa-f]{4})"
+                },
+                {
+                    "name": "invalid.illegal.unknown-escape",
+                    "match": "\\\\(?:x[0-9A-Fa-f]{0,1}|u[0-9A-Fa-f]{0,3}|U[0-9A-Fa-f]{0,7}|.)"
+                }
+            ]
+        }
+    },
+    "uuid": "bf5237b6-dc20-42e5-8c82-005c82083fd7"
+}

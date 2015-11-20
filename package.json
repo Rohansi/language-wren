@@ -1,0 +1,35 @@
+{
+    "name": "language-wren",
+    "version": "0.0.1",
+    "publisher": "Rohansi",
+    "displayName": "Wren",
+    "description": "Syntax highlighting for Wren",
+    "license": "LICENSE",
+    "bugs": {
+        "url": "https://github.com/Rohansi/language-wren/issues"
+    },
+    "homepage": "https://github.com/Rohansi/language-wren",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Rohansi/language-wren.git"
+    },
+    "engines": {
+        "vscode": "^0.10.1"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "wren",
+            "aliases": ["Wren", "wren"],
+            "extensions": [".wren"],
+            "configuration": "./wren.configuration.json"
+        }],
+        "grammars": [{
+            "language": "wren",
+            "scopeName": "source.wren",
+            "path": "./syntaxes/wren.json"
+        }]
+    }
+}
