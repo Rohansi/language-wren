@@ -1,6 +1,6 @@
 {
     "name": "language-wren",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "Rohansi",
     "displayName": "Wren",
     "description": "Syntax highlighting for Wren",
@@ -11,7 +11,7 @@
     "homepage": "https://github.com/Rohansi/language-wren",
     "repository": {
         "type": "git",
-        "url": "https://github.com/Rohansi/language-wren.git"
+        "url": "https://github.com/Rohansi/language-wren"
     },
     "engines": {
         "vscode": "^0.10.1"

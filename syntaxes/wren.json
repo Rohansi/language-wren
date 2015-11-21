@@ -6,6 +6,7 @@
         { "include": "#comment" },
         { "include": "#blockComment" },
         { "include": "#keyword" },
+        { "include": "#hexadecimal" },
         { "include": "#number" },
         { "include": "#string" },
         { "include": "#className" },
@@ -26,9 +27,13 @@
             "name": "keyword",
             "match": "\\b(?:break|class|construct|else|false|for|foreign|if|import|in|is|null|return|static|super|this|true|var|while)\\b"
         },
+        "hexadecimal": {
+            "name": "constant.numeric.hexadecimal",
+            "match": "0x[0-9A-Za-z]+"
+        },
         "number": {
             "name": "constant.numeric",
-            "match": "-?\\d+(?:.\\d+)?"
+            "match": "\\d+(?:\\.\\d+)?(?:[Ee]-?\\d+)?"
         },
         "className": {
             "name": "entity.type",
