@@ -1,6 +1,6 @@
 {
     "name": "language-wren",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "Rohansi",
     "displayName": "Wren",
     "description": "Syntax highlighting for Wren",

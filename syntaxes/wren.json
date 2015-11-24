@@ -6,11 +6,12 @@
         { "include": "#comment" },
         { "include": "#blockComment" },
         { "include": "#keyword" },
+        { "include": "#className" },
+        { "include": "#fieldName" },
+        { "include": "#name" },
         { "include": "#hexadecimal" },
         { "include": "#number" },
-        { "include": "#string" },
-        { "include": "#className" },
-        { "include": "#fieldName" }
+        { "include": "#string" }
     ],
     "repository": {
         "comment": {
@@ -21,27 +22,31 @@
             "name": "comment.block",
             "begin": "/\\*",
             "end": "\\*/",
-            "patterns": [ { "include": "$self" } ]
+            "patterns": [ { "include": "#blockComment" } ]
         },
         "keyword": {
             "name": "keyword",
             "match": "\\b(?:break|class|construct|else|false|for|foreign|if|import|in|is|null|return|static|super|this|true|var|while)\\b"
         },
+        "className": {
+            "name": "entity.type",
+            "match": "[A-Z][A-Za-z0-9_]+"
+        },
+        "fieldName": {
+            "name": "variable.other",
+            "match": "_[A-Za-z0-9_]+"
+        },
+        "name": {
+            "name": "meta.name",
+            "match": "[A-Za-z_][A-Za-z0-9_]+"
+        },
         "hexadecimal": {
             "name": "constant.numeric.hexadecimal",
-            "match": "0x[0-9A-Za-z]+"
+            "match": "0x[A-Fa-f0-9]+"
         },
         "number": {
             "name": "constant.numeric",
             "match": "\\d+(?:\\.\\d+)?(?:[Ee]-?\\d+)?"
-        },
-        "className": {
-            "name": "entity.type",
-            "match": "\\b[A-Z][A-Za-z0-9_]+\\b"
-        },
-        "fieldName": {
-            "name": "variable.other",
-            "match": "\\b_[A-Za-z0-9_]+\\b"
         },
         "string": {
             "name": "string.quoted.double",
